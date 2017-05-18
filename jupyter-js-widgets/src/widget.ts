@@ -189,7 +189,7 @@ class WidgetModel extends Backbone.Model {
                         return (this.constructor as typeof WidgetModel)._deserialize_state(state, this.widget_manager);
                     }).then((state) => {
                         this.set_state(state);
-                    }).catch(utils.reject('Could not process update msg for model id: ' + String(this.id), true))
+                    });
                 return this.state_change;
             case 'custom':
                 this.trigger('msg:custom', msg.content.data.content, msg.buffers);
@@ -200,7 +200,7 @@ class WidgetModel extends Backbone.Model {
                 }
                 this.state_change = this.state_change.then(() => {
                     this.widget_manager.display_model(msg, this);
-                }).catch(utils.reject('Could not process display view msg', true));
+                });
                 return this.state_change;
         }
     }
@@ -686,8 +686,7 @@ abstract class WidgetView extends NativeView<WidgetModel> {
     create_child_view(child_model, options?) {
         var that = this;
         options = _.extend({ parent: this }, options || {});
-        return this.model.widget_manager.create_view(child_model, options)
-            .catch(utils.reject('Could not create child view', true));
+        return this.model.widget_manager.create_view(child_model, options);
     }
 
     /**
@@ -822,7 +821,7 @@ class DOMWidgetView extends WidgetView {
                         MessageLoop.postMessage(this.pWidget, Widget.ResizeMessage.UnknownSize);
                         return view;
                     });
-                }).catch(utils.reject('Could not add LayoutView to DOMWidgetView', true));
+                });
             });
         }
     }
@@ -844,7 +843,7 @@ class DOMWidgetView extends WidgetView {
                         // trigger phosphor resize messages.
                         return view;
                     });
-                }).catch(utils.reject('Could not add styleView to DOMWidgetView', true));
+                });
             });
         }
     }

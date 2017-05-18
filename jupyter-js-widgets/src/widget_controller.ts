@@ -362,7 +362,7 @@ class ControllerView extends DOMWidgetView {
                 view.trigger('displayed', that);
             });
             return view;
-        }).catch(utils.reject('Could not add button view', true));
+        });
     }
 
     add_axis(model) {
@@ -376,7 +376,7 @@ class ControllerView extends DOMWidgetView {
                 view.trigger('displayed', that);
             });
             return view;
-        }).catch(utils.reject('Could not add axis view', true));
+        });
     }
 
     remove() {

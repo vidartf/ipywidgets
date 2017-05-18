@@ -10,10 +10,6 @@ import {
 } from './widget_core';
 
 import {
-    reject
-} from './utils';
-
-import {
     ArrayExt
 } from '@phosphor/algorithm';
 
@@ -174,7 +170,7 @@ class BoxView extends DOMWidgetView {
             this.pWidget.insertWidget(i, view.pWidget);
             dummy.dispose();
             return view;
-        }).catch(reject('Could not add child view to box', true));
+        });
     }
 
     remove() {

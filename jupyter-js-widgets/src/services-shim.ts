@@ -70,8 +70,7 @@ namespace shims {
                         return f(comm, msg);
                     } catch (e) {
                         comm.close();
-                        var wrapped_error = new utils.WrappedError('Exception opening new comm', e);
-                        console.error(wrapped_error);
+                        console.error('Exception opening new comm', e);
                         return;
                     }
                 });

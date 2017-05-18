@@ -92,7 +92,7 @@ abstract class ManagerBase<T> {
      */
     display_model(msg: services.KernelMessage.IMessage, model: Backbone.Model, options: any = {}): Promise<T> {
         return this.create_view(model, options).then(
-            view => this.display_view(msg, view, options)).catch(utils.reject('Could not create view', true));
+            view => this.display_view(msg, view, options));
     };
 
     /**
@@ -131,7 +131,7 @@ abstract class ManagerBase<T> {
                 });
                 view.listenTo(model, 'destroy', view.remove);
                 return Promise.resolve(view.render()).then(() => {return view;});
-            }).catch(utils.reject('Could not create a view for model id ' + model.id, true));
+            });
         });
         var id = utils.uuid();
         model.views[id] = model.state_change;
@@ -178,7 +178,7 @@ abstract class ManagerBase<T> {
             model_module: data.state['_model_module'],
             model_module_version: data.state['_model_module_version'],
             comm: comm
-        }, data.state).catch(utils.reject('Could not create a model.', true));
+        }, data.state);
     };
 
     /**

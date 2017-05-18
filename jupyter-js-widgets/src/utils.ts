@@ -34,6 +34,7 @@ export
 class WrappedError extends Error {
     constructor(message, error) {
         super(message);
+        console.debug('WrappedError deprecated!')
         // Keep a stack of the original error messages.
         if (error instanceof WrappedError) {
             this.error_stack = error.error_stack;

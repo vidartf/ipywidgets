@@ -206,7 +206,7 @@ class AccordionView extends DOMWidgetView {
             collapse.widget = widget;
             placeholder.dispose();
             return view;
-        }).catch(utils.reject('Could not add child view to box', true));
+        });
     }
 
     remove() {
@@ -367,7 +367,7 @@ class TabView extends DOMWidgetView {
             tabs.insertWidget(i+1, widget);
             placeholder.dispose();
             return view;
-        }).catch(utils.reject('Could not add child view to box', true));
+        });
     }
 
     /**
