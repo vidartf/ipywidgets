@@ -527,7 +527,7 @@ abstract class ManagerBase<T> {
      */
     protected abstract _create_comm(
         comm_target_name: string,
-        model_id: string,
+        model_id?: string,
         data?: any,
         metadata?: any,
         buffers?: ArrayBuffer[] | ArrayBufferView[]):

@@ -480,11 +480,12 @@ class WidgetModel extends Backbone.Model {
      *
      * This invokes a Backbone.Sync.
      */
-    save_changes(callbacks?) {
+    save_changes(callbacks?: { success: (model, response, options) => void, error: (model, response, options) => void }) {
         if (this.comm_live) {
-            let options: any = {patch: true};
+            let options: any = {patch: true}
             if (callbacks) {
-                options.callbacks = callbacks;
+                options.success = callbacks.success;
+                options.error = callbacks.error;
             }
             this.save(this._buffered_state_diff, options);
             this._buffered_state_diff = {};
