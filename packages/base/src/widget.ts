@@ -21,6 +21,10 @@ import {
 } from '@phosphor/messaging';
 
 import {
+    IState, IBuffer, IStateMap
+} from './state';
+
+import {
     IClassicComm
 } from './services-shim';
 
@@ -28,12 +32,26 @@ import {
     JUPYTER_WIDGETS_VERSION
 } from './version';
 
+
+export
+interface SyncOptions {
+    drop_defaults: boolean;
+    callbacks: SyncCallbacks;
+    attrs: {[key: string]: any};
+}
+
+export
+interface SyncCallbacks {
+    iopub?: { status?: (msg: any) => void }
+}
+
+
 /**
  * Replace model ids with models recursively.
  */
 export
-function unpack_models(value, manager): Promise<any> {
-    let unpacked;
+function unpack_models(value: any, manager: managerBase.ManagerBase<any>): Promise<any> {
+    let unpacked: any;
     if (Array.isArray(value)) {
         unpacked = [];
         value.forEach((sub_value, key) => {
@@ -108,7 +126,7 @@ class WidgetModel extends Backbone.Model {
      *      An ID unique to this model.
      * comm : Comm instance (optional)
      */
-    initialize(attributes, options: {model_id: string, comm?: any, widget_manager: any}) {
+    initialize(attributes: any, options: {model_id: string, comm?: any, widget_manager: any}) {
         super.initialize(attributes, options);
 
         // Attributes should be initialized here, since user initialization may depend on it
@@ -155,7 +173,7 @@ class WidgetModel extends Backbone.Model {
     /**
      * Send a custom msg over the comm.
      */
-    send(content, callbacks, buffers?) {
+    send(content: any, callbacks: any, buffers?: IBuffer[]) {
         if (this.comm !== undefined) {
             let data = {method: 'custom', content: content};
             this.comm.send(data, callbacks, {}, buffers);
@@ -169,7 +187,7 @@ class WidgetModel extends Backbone.Model {
      *
      * @returns - a promise that is fulfilled when all the associated views have been removed.
      */
-    close(comm_closed: boolean = false): Promise<void> {
+    close(comm_closed: boolean = false): Promise<void> | undefined {
         // can only be closed once.
         if (this._closed) {
             return;
@@ -202,7 +220,7 @@ class WidgetModel extends Backbone.Model {
     /**
      * Handle incoming comm msg.
      */
-    _handle_comm_msg(msg): Promise<void> {
+    _handle_comm_msg(msg): Promise<void> | undefined {
         let method = msg.content.data.method;
         switch (method) {
             case 'update':
@@ -236,7 +254,7 @@ class WidgetModel extends Backbone.Model {
      *
      * This function is meant for internal use only. Values set here will not be propagated on a sync.
      */
-    set_state(state: any) {
+    set_state(state: any): void {
         this._state_lock = state;
         try {
             this.set(state);
@@ -253,13 +271,13 @@ class WidgetModel extends Backbone.Model {
      * If drop_default is truthy, attributes that are equal to their default
      * values are dropped.
      */
-    get_state(drop_defaults) {
+    get_state(drop_defaults?: boolean): any {
         let fullState = this.attributes;
         if (drop_defaults) {
             // if defaults is a function, call it
             let d = this.defaults;
             let defaults = (typeof d === 'function') ? d.call(this) : d;
-            let state = {};
+            let state: any = {};
             Object.keys(fullState).forEach(key => {
                 if (!(utils.isEqual(fullState[key], defaults[key]))) {
                     state[key] = fullState[key];
@@ -276,7 +294,7 @@ class WidgetModel extends Backbone.Model {
      *
      * execution_state : ('busy', 'idle', 'starting')
      */
-    _handle_status(msg) {
+    _handle_status(msg: { content: { execution_state: 'busy' | 'idle' | 'starting' }}) {
         if (this.comm !== void 0) {
             if (msg.content.execution_state === 'idle') {
                 this._pending_msgs--;
@@ -356,7 +374,7 @@ class WidgetModel extends Backbone.Model {
      *   should be synced, otherwise, sync all attributes.
      *
      */
-    sync(method: string, model: WidgetModel, options: any = {}): any {
+    sync(method: string, model: WidgetModel, options: Partial<SyncOptions> = {}): any {
         // the typing is to return `any` since the super.sync method returns a JqXHR, but we just return false if there is an error.
         if (this.comm === undefined) {
             throw 'Syncing error: no comm channel defined';
@@ -432,7 +450,7 @@ class WidgetModel extends Backbone.Model {
         for (const k of Object.keys(state)) {
             try {
                 if (serializers[k] && serializers[k].serialize) {
-                    state[k] = (serializers[k].serialize)(state[k], this);
+                    state[k] = (serializers[k].serialize!)(state[k], this);
                 } else {
                     // the default serializer just deep-copies the object
                     state[k] = JSON.parse(JSON.stringify(state[k]));
@@ -451,7 +469,7 @@ class WidgetModel extends Backbone.Model {
     /**
      * Send a sync message to the kernel.
      */
-    send_sync_message(state, callbacks: any = {}) {
+    send_sync_message(state, callbacks: SyncCallbacks = {}) {
         try {
             callbacks.iopub = callbacks.iopub || {};
             let statuscb = callbacks.iopub.status;
@@ -480,12 +498,11 @@ class WidgetModel extends Backbone.Model {
      *
      * This invokes a Backbone.Sync.
      */
-    save_changes(callbacks?: { success: (model, response, options) => void, error: (model, response, options) => void }) {
+    save_changes(callbacks?: SyncCallbacks) {
         if (this.comm_live) {
-            let options: any = {patch: true}
+            let options: Backbone.ModelSaveOptions & { callbacks?: SyncCallbacks } = {patch: true};
             if (callbacks) {
-                options.success = callbacks.success;
-                options.error = callbacks.error;
+                options.callbacks = callbacks;
             }
             this.save(this._buffered_state_diff, options);
             this._buffered_state_diff = {};
@@ -499,12 +516,12 @@ class WidgetModel extends Backbone.Model {
      * the second form will result in foo being called twice
      * while the first will call foo only once.
      */
-    on_some_change(keys, callback, context) {
-        this.on('change', function() {
+    on_some_change(keys: string[], callback: Function, context?: any) {
+        this.on('change', (...args: any[]) => {
             if (keys.some(this.hasChanged, this)) {
-                callback.apply(context, arguments);
+                callback.apply(context, args);
             }
-        }, this);
+        });
     }
 
     /**
@@ -520,14 +537,14 @@ class WidgetModel extends Backbone.Model {
      * is an instance of widget manager, which is required for the
      * deserialization of widget models.
      */
-    static _deserialize_state(state, manager) {
+    static _deserialize_state(state, manager: managerBase.ManagerBase<any>) {
         let serializers = this.serializers;
         let deserialized;
         if (serializers) {
             deserialized = {};
             for (let k in state) {
                 if (serializers[k] && serializers[k].deserialize) {
-                     deserialized[k] = (serializers[k].deserialize)(state[k], manager);
+                     deserialized[k] = (serializers[k].deserialize!)(state[k], manager);
                 } else {
                      deserialized[k] = state[k];
                 }
@@ -596,7 +613,7 @@ class WidgetView extends NativeView<WidgetModel> {
     /**
      * Initializer, called at the end of the constructor.
      */
-    initialize(parameters) {
+    initialize(parameters: any) {
         this.listenTo(this.model, 'change', () => {
             let changed = Object.keys(this.model.changedAttributes() || {});
             if (changed[0] === '_view_count' && changed.length === 1) {
@@ -632,7 +649,7 @@ class WidgetView extends NativeView<WidgetModel> {
      *
      * Update view to be consistent with this.model
      */
-    update(options?) {
+    update(options?: any) {
         return;
     }
 
@@ -648,7 +665,7 @@ class WidgetView extends NativeView<WidgetModel> {
     /**
      * Create and promise that resolves to a child view of a given model
      */
-    create_child_view(child_model, options = {}) {
+    create_child_view(child_model: WidgetModel, options?: any = {}) {
         let that = this;
         options = { parent: this, ...options};
         return this.model.widget_manager.create_view(child_model, options)
@@ -665,7 +682,7 @@ class WidgetView extends NativeView<WidgetModel> {
     /**
      * Send a custom msg associated with this view.
      */
-    send(content, buffers?) {
+    send(content: any, buffers?: IBuffer[]) {
         this.model.send(content, this.callbacks(), buffers);
     }
 
@@ -718,7 +735,7 @@ class JupyterPhosphorWidget extends Widget {
         if (this._view) {
             this._view.remove();
         }
-        this._view = null;
+        this._view = null!;
     }
 
     /**

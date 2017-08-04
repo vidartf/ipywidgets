@@ -5,6 +5,10 @@ import * as utils from './utils';
 import * as services from '@jupyterlab/services';
 
 import {
+    IState, IBuffer, IStateMap
+} from './state';
+
+import {
     WidgetModel, WidgetView
 } from './widget';
 
@@ -192,7 +196,7 @@ abstract class ManagerBase<T> {
     /**
      * callback handlers specific to a view
      */
-    callbacks (view: WidgetView) {
+    callbacks (view?: WidgetView) {
         return {};
     }
 
@@ -210,7 +214,7 @@ abstract class ManagerBase<T> {
      * Handle when a comm is opened.
      */
     handle_comm_open(comm: IClassicComm, msg: services.KernelMessage.ICommOpenMsg): Promise<WidgetModel> {
-        let protocolVersion = ((msg.metadata || {}).version as string) || '';
+        let protocolVersion = ((msg.metadata || {})['version'] as string) || '';
         if (protocolVersion.split('.', 1)[0] !== PROTOCOL_MAJOR_VERSION) {
             let error = `Wrong widget protocol version: received protocol version '${protocolVersion}', but was expecting major version '${PROTOCOL_MAJOR_VERSION}'`;
             console.error(error);
@@ -385,14 +389,18 @@ abstract class ManagerBase<T> {
      * @param options - The options for what state to return.
      * @returns Promise for a state dictionary
      */
-    get_state(options: StateOptions = {}): Promise<any> {
+    get_state(options: StateOptions = {}): Promise<IState> {
         return utils.resolvePromisesDict(this._models).then((models) => {
-            let state = {};
+            let state: IStateMap = {};
             Object.keys(models).forEach(model_id => {
                 let model = models[model_id];
                 let split = utils.remove_buffers(model.serialize(model.get_state(options.drop_defaults)));
-                let buffers = split.buffers.map((buffer, index) => {
-                    return {data: utils.bufferToBase64(buffer), path: split.buffer_paths[index], encoding: 'base64'};
+                let buffers = split.buffers.map((buffer, index): IBuffer => {
+                    return {
+                        data: utils.bufferToBase64(buffer),
+                        path: split.buffer_paths[index],
+                        encoding: 'base64'
+                    };
                 });
                 state[model_id] = {
                     model_name: model.name,
@@ -532,7 +540,7 @@ abstract class ManagerBase<T> {
         metadata?: any,
         buffers?: ArrayBuffer[] | ArrayBufferView[]):
         Promise<IClassicComm>;
-    protected abstract _get_comm_info();
+    protected abstract _get_comm_info(): any;
 
     /**
      * Dictionary of model ids and model instance promises
