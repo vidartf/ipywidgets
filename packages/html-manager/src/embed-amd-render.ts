@@ -2,9 +2,9 @@
 // Distributed under the terms of the Modified BSD License.
 
 (window as any).require(['@jupyter-widgets/html-manager/dist/libembed-amd'], function(embed) {
-    if (document.readyState === "complete") {
+    if (document.readyState === 'complete') {
         embed.renderWidgets();
     } else {
-        window.addEventListener('load', function() {embed.renderWidgets();});
+        window.addEventListener('load', function() { embed.renderWidgets(); });
     }
 });

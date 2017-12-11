@@ -18,7 +18,7 @@ export class OutputModel extends outputBase.OutputModel {
         return {
             ...super.defaults(),
             msg_id: ''
-        }
+        };
     }
 
     initialize(attributes: any, options: any) {
@@ -51,16 +51,16 @@ export class OutputView extends outputBase.OutputView {
             throw new Error('Cannot reset the DOM element.');
         }
         this.el = this.pWidget.node;
-        this.$el = $(this.pWidget.node)
+        this.$el = $(this.pWidget.node);
     }
 
     render() {
-        const manager = this.model.widget_manager
+        const manager = this.model.widget_manager;
         const rendermime = manager.renderMime;
         this._outputView = new OutputArea({
             rendermime: rendermime,
             model: this.model.outputs
-        })
+        });
         this.pWidget.insertWidget(0, this._outputView);
         this.pWidget.addClass('jupyter-widgets');
         this.pWidget.addClass('widget-output');

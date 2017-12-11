@@ -20,12 +20,12 @@ let requirePromise = function(pkg: string | string[]): Promise<any> {
     return new Promise((resolve, reject) => {
         let require = (window as any).requirejs;
         if (require === undefined) {
-            reject("Requirejs is needed, please ensure it is loaded on the page.");
+            reject('Requirejs is needed, please ensure it is loaded on the page.');
         } else {
             require(pkg, resolve, reject);
         }
     });
-}
+};
 
 function moduleNameToCDNUrl(moduleName: string, moduleVersion: string) {
     let packageName = moduleName;
@@ -90,7 +90,7 @@ function renderWidgets(element = document.documentElement, loader: (moduleName: 
     requirePromise(['@jupyter-widgets/html-manager']).then((htmlmanager) => {
         let managerFactory = () => {
             return new htmlmanager.HTMLManager({loader: loader});
-        }
+        };
         libembed.renderWidgets(managerFactory, element);
     });
 }

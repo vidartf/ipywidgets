@@ -1,7 +1,7 @@
 // Copyright (c) Jupyter Development Team.
 // Distributed under the terms of the Modified BSD License.
 
-declare var  __webpack_public_path__:string;
+declare var __webpack_public_path__: string;
 __webpack_public_path__ = (window as any).__jupyter_widgets_assets_path__ || __webpack_public_path__;
 
 import 'font-awesome/css/font-awesome.css';
@@ -15,11 +15,11 @@ import {
 } from './index';
 
 // Load json schema validator
-var Ajv = require('ajv');
-var widget_state_schema = require('@jupyter-widgets/schema').v2.state;
-var widget_view_schema = require('@jupyter-widgets/schema').v2.view;
+const Ajv = require('ajv');
+const widget_state_schema = require('@jupyter-widgets/schema').v2.state;
+const widget_view_schema = require('@jupyter-widgets/schema').v2.view;
 
-let ajv = new Ajv()
+let ajv = new Ajv();
 let model_validate = ajv.compile(widget_state_schema);
 let view_validate = ajv.compile(widget_view_schema);
 
@@ -32,7 +32,7 @@ let view_validate = ajv.compile(widget_view_schema);
 export
 function renderWidgets(managerFactory: () => HTMLManager, element: HTMLElement = document.documentElement) {
     let tags = element.querySelectorAll('script[type="application/vnd.jupyter.widget-state+json"]');
-    for (let i=0; i!=tags.length; ++i) {
+    for (let i=0; i !== tags.length; ++i) {
         renderManager(element, JSON.parse(tags[i].innerHTML), managerFactory);
     }
 }
@@ -59,7 +59,7 @@ function renderManager(element: HTMLElement, widgetState: any, managerFactory: (
     let manager = managerFactory();
     manager.set_state(widgetState).then(function(models) {
         let tags = element.querySelectorAll('script[type="application/vnd.jupyter.widget-view+json"]');
-        for (let i=0; i!=tags.length; ++i) {
+        for (let i=0; i !== tags.length; ++i) {
             let viewtag = tags[i];
             let widgetViewObject = JSON.parse(viewtag.innerHTML);
             let valid = view_validate(widgetViewObject);
@@ -70,7 +70,7 @@ function renderManager(element: HTMLElement, widgetState: any, managerFactory: (
             // Find the model id in the models. We should use .find, but IE
             // doesn't support .find
             let model = models.filter( (item) => {
-                return item.model_id == model_id;
+                return item.model_id === model_id;
             })[0];
             if (model !== undefined) {
                 let prev = viewtag.previousElementSibling;
