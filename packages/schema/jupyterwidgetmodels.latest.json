@@ -1996,6 +1996,126 @@
   {
     "attributes": [
       {
+        "default": [],
+        "help": "CSS classes applied to widget DOM element",
+        "items": {
+          "type": "string"
+        },
+        "name": "_dom_classes",
+        "type": "array"
+      },
+      {
+        "default": "@jupyter-widgets/controls",
+        "help": "",
+        "name": "_model_module",
+        "type": "string"
+      },
+      {
+        "default": "2.0.0",
+        "help": "",
+        "name": "_model_module_version",
+        "type": "string"
+      },
+      {
+        "default": "DatetimeModel",
+        "help": "",
+        "name": "_model_name",
+        "type": "string"
+      },
+      {
+        "default": "@jupyter-widgets/controls",
+        "help": "",
+        "name": "_view_module",
+        "type": "string"
+      },
+      {
+        "default": "2.0.0",
+        "help": "",
+        "name": "_view_module_version",
+        "type": "string"
+      },
+      {
+        "default": "DatetimeView",
+        "help": "",
+        "name": "_view_name",
+        "type": "string"
+      },
+      {
+        "default": "",
+        "help": "Description of the control.",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "default": false,
+        "help": "Enable or disable user changes.",
+        "name": "disabled",
+        "type": "bool"
+      },
+      {
+        "default": "reference to new instance",
+        "help": "",
+        "name": "layout",
+        "type": "reference",
+        "widget": "Layout"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "max",
+        "type": "Datetime"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "min",
+        "type": "Datetime"
+      },
+      {
+        "default": "reference to new instance",
+        "help": "Styling customizations",
+        "name": "style",
+        "type": "reference",
+        "widget": "DescriptionStyle"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "Is widget tabbable?",
+        "name": "tabbable",
+        "type": "bool"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "A tooltip caption.",
+        "name": "tooltip",
+        "type": "string"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "value",
+        "type": "Datetime"
+      }
+    ],
+    "model": {
+      "module": "@jupyter-widgets/controls",
+      "name": "DatetimeModel",
+      "version": "2.0.0"
+    },
+    "view": {
+      "module": "@jupyter-widgets/controls",
+      "name": "DatetimeView",
+      "version": "2.0.0"
+    }
+  },
+  {
+    "attributes": [
+      {
         "default": "@jupyter-widgets/controls",
         "help": "",
         "name": "_model_module",
@@ -5756,6 +5876,141 @@
     "view": {
       "module": "@jupyter-widgets/controls",
       "name": "TextareaView",
+      "version": "2.0.0"
+    }
+  },
+  {
+    "attributes": [
+      {
+        "default": [],
+        "help": "CSS classes applied to widget DOM element",
+        "items": {
+          "type": "string"
+        },
+        "name": "_dom_classes",
+        "type": "array"
+      },
+      {
+        "default": "@jupyter-widgets/controls",
+        "help": "",
+        "name": "_model_module",
+        "type": "string"
+      },
+      {
+        "default": "2.0.0",
+        "help": "",
+        "name": "_model_module_version",
+        "type": "string"
+      },
+      {
+        "default": "TimeModel",
+        "help": "",
+        "name": "_model_name",
+        "type": "string"
+      },
+      {
+        "default": "@jupyter-widgets/controls",
+        "help": "",
+        "name": "_view_module",
+        "type": "string"
+      },
+      {
+        "default": "2.0.0",
+        "help": "",
+        "name": "_view_module_version",
+        "type": "string"
+      },
+      {
+        "default": "TimeView",
+        "help": "",
+        "name": "_view_name",
+        "type": "string"
+      },
+      {
+        "default": "",
+        "help": "Description of the control.",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "default": false,
+        "help": "Enable or disable user changes.",
+        "name": "disabled",
+        "type": "bool"
+      },
+      {
+        "default": "reference to new instance",
+        "help": "",
+        "name": "layout",
+        "type": "reference",
+        "widget": "Layout"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "max",
+        "type": "Time"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "min",
+        "type": "Time"
+      },
+      {
+        "default": 60,
+        "help": "The time step to use for the picker, in seconds, or \"any\".",
+        "name": "step",
+        "type": ["float", "string"],
+        "union_attributes": [
+          {
+            "type": "float"
+          },
+          {
+            "enum": ["any"],
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "default": "reference to new instance",
+        "help": "Styling customizations",
+        "name": "style",
+        "type": "reference",
+        "widget": "DescriptionStyle"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "Is widget tabbable?",
+        "name": "tabbable",
+        "type": "bool"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "A tooltip caption.",
+        "name": "tooltip",
+        "type": "string"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "value",
+        "type": "Time"
+      }
+    ],
+    "model": {
+      "module": "@jupyter-widgets/controls",
+      "name": "TimeModel",
+      "version": "2.0.0"
+    },
+    "view": {
+      "module": "@jupyter-widgets/controls",
+      "name": "TimeView",
       "version": "2.0.0"
     }
   },
