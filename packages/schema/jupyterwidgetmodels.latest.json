@@ -389,9 +389,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -441,10 +439,7 @@
       {
         "default": [],
         "help": "List of widget children",
-        "items": {
-          "type": "reference",
-          "widget": "Widget"
-        },
+        "items": { "type": "reference", "widget": "Widget" },
         "name": "children",
         "type": "array"
       },
@@ -502,9 +497,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -612,9 +605,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -679,18 +670,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100.0,
-        "help": "Max value",
-        "name": "max",
-        "type": "float"
-      },
-      {
-        "default": 0.0,
-        "help": "Min value",
-        "name": "min",
-        "type": "float"
-      },
+      { "default": 100.0, "help": "Max value", "name": "max", "type": "float" },
+      { "default": 0.0, "help": "Min value", "name": "min", "type": "float" },
       {
         "allow_none": true,
         "default": null,
@@ -742,9 +723,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -809,18 +788,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100,
-        "help": "Max value",
-        "name": "max",
-        "type": "int"
-      },
-      {
-        "default": 0,
-        "help": "Min value",
-        "name": "min",
-        "type": "int"
-      },
+      { "default": 100, "help": "Max value", "name": "max", "type": "int" },
+      { "default": 0, "help": "Min value", "name": "min", "type": "int" },
       {
         "default": 1,
         "help": "Minimum step to increment the value",
@@ -848,12 +817,7 @@
         "name": "tooltip",
         "type": "string"
       },
-      {
-        "default": 0,
-        "help": "Int value",
-        "name": "value",
-        "type": "int"
-      }
+      { "default": 0, "help": "Int value", "name": "value", "type": "int" }
     ],
     "model": {
       "module": "@jupyter-widgets/controls",
@@ -871,9 +835,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -923,10 +885,7 @@
       {
         "default": [],
         "help": "List of widget children",
-        "items": {
-          "type": "reference",
-          "widget": "Widget"
-        },
+        "items": { "type": "reference", "widget": "Widget" },
         "name": "children",
         "type": "array"
       },
@@ -968,9 +927,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1143,9 +1100,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1254,9 +1209,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1365,9 +1318,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1441,9 +1392,7 @@
       {
         "default": [],
         "help": "Dropdown options for the combobox",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "options",
         "type": "array"
       },
@@ -1497,9 +1446,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1583,9 +1530,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1675,9 +1620,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1720,20 +1663,14 @@
       {
         "default": [],
         "help": "The axes on the gamepad.",
-        "items": {
-          "type": "reference",
-          "widget": "Axis"
-        },
+        "items": { "type": "reference", "widget": "Axis" },
         "name": "axes",
         "type": "array"
       },
       {
         "default": [],
         "help": "The buttons on the gamepad.",
-        "items": {
-          "type": "reference",
-          "widget": "Button"
-        },
+        "items": { "type": "reference", "widget": "Button" },
         "name": "buttons",
         "type": "array"
       },
@@ -1805,9 +1742,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1892,9 +1827,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -1998,9 +1931,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -2237,9 +2168,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -2264,9 +2193,7 @@
       {
         "default": [],
         "help": "The labels for the options.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_options_labels",
         "type": "array"
       },
@@ -2352,9 +2279,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -2491,9 +2416,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -2646,9 +2569,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -2709,18 +2630,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100.0,
-        "help": "Max value",
-        "name": "max",
-        "type": "float"
-      },
-      {
-        "default": 0.0,
-        "help": "Min value",
-        "name": "min",
-        "type": "float"
-      },
+      { "default": 100.0, "help": "Max value", "name": "max", "type": "float" },
+      { "default": 0.0, "help": "Min value", "name": "min", "type": "float" },
       {
         "default": "horizontal",
         "enum": ["horizontal", "vertical"],
@@ -2772,9 +2683,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -2839,18 +2748,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100.0,
-        "help": "Max value",
-        "name": "max",
-        "type": "float"
-      },
-      {
-        "default": 0.0,
-        "help": "Min value",
-        "name": "min",
-        "type": "float"
-      },
+      { "default": 100.0, "help": "Max value", "name": "max", "type": "float" },
+      { "default": 0.0, "help": "Min value", "name": "min", "type": "float" },
       {
         "default": "horizontal",
         "enum": ["horizontal", "vertical"],
@@ -2921,9 +2820,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -2988,18 +2885,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100.0,
-        "help": "Max value",
-        "name": "max",
-        "type": "float"
-      },
-      {
-        "default": 0.0,
-        "help": "Min value",
-        "name": "min",
-        "type": "float"
-      },
+      { "default": 100.0, "help": "Max value", "name": "max", "type": "float" },
+      { "default": 0.0, "help": "Min value", "name": "min", "type": "float" },
       {
         "default": "horizontal",
         "enum": ["horizontal", "vertical"],
@@ -3070,9 +2957,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3188,9 +3073,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3240,10 +3123,7 @@
       {
         "default": [],
         "help": "List of widget children",
-        "items": {
-          "type": "reference",
-          "widget": "Widget"
-        },
+        "items": { "type": "reference", "widget": "Widget" },
         "name": "children",
         "type": "array"
       },
@@ -3285,9 +3165,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3337,10 +3215,7 @@
       {
         "default": [],
         "help": "List of widget children",
-        "items": {
-          "type": "reference",
-          "widget": "Widget"
-        },
+        "items": { "type": "reference", "widget": "Widget" },
         "name": "children",
         "type": "array"
       },
@@ -3382,9 +3257,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3487,9 +3360,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3592,9 +3463,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3696,9 +3565,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3758,18 +3625,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100,
-        "help": "Max value",
-        "name": "max",
-        "type": "int"
-      },
-      {
-        "default": 0,
-        "help": "Min value",
-        "name": "min",
-        "type": "int"
-      },
+      { "default": 100, "help": "Max value", "name": "max", "type": "int" },
+      { "default": 0, "help": "Min value", "name": "min", "type": "int" },
       {
         "default": "horizontal",
         "enum": ["horizontal", "vertical"],
@@ -3798,12 +3655,7 @@
         "name": "tooltip",
         "type": "string"
       },
-      {
-        "default": 0,
-        "help": "Int value",
-        "name": "value",
-        "type": "int"
-      }
+      { "default": 0, "help": "Int value", "name": "value", "type": "int" }
     ],
     "model": {
       "module": "@jupyter-widgets/controls",
@@ -3821,9 +3673,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -3888,18 +3738,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100,
-        "help": "Max value",
-        "name": "max",
-        "type": "int"
-      },
-      {
-        "default": 0,
-        "help": "Min value",
-        "name": "min",
-        "type": "int"
-      },
+      { "default": 100, "help": "Max value", "name": "max", "type": "int" },
+      { "default": 0, "help": "Min value", "name": "min", "type": "int" },
       {
         "default": "horizontal",
         "enum": ["horizontal", "vertical"],
@@ -3969,9 +3809,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4036,18 +3874,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100,
-        "help": "Max value",
-        "name": "max",
-        "type": "int"
-      },
-      {
-        "default": 0,
-        "help": "Min value",
-        "name": "min",
-        "type": "int"
-      },
+      { "default": 100, "help": "Max value", "name": "max", "type": "int" },
+      { "default": 0, "help": "Min value", "name": "min", "type": "int" },
       {
         "default": "horizontal",
         "enum": ["horizontal", "vertical"],
@@ -4094,12 +3922,7 @@
         "name": "tooltip",
         "type": "string"
       },
-      {
-        "default": 0,
-        "help": "Int value",
-        "name": "value",
-        "type": "int"
-      }
+      { "default": 0, "help": "Int value", "name": "value", "type": "int" }
     ],
     "model": {
       "module": "@jupyter-widgets/controls",
@@ -4117,9 +3940,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4211,12 +4032,7 @@
         "name": "tooltip",
         "type": "string"
       },
-      {
-        "default": 0,
-        "help": "Int value",
-        "name": "value",
-        "type": "int"
-      }
+      { "default": 0, "help": "Int value", "name": "value", "type": "int" }
     ],
     "model": {
       "module": "@jupyter-widgets/controls",
@@ -4234,9 +4050,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4402,9 +4216,125 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
+        "name": "_dom_classes",
+        "type": "array"
+      },
+      {
+        "default": "@jupyter-widgets/controls",
+        "help": "",
+        "name": "_model_module",
+        "type": "string"
+      },
+      {
+        "default": "1.5.0",
+        "help": "",
+        "name": "_model_module_version",
+        "type": "string"
+      },
+      {
+        "default": "NaiveDatetimeModel",
+        "help": "",
+        "name": "_model_name",
+        "type": "string"
+      },
+      {
+        "default": "@jupyter-widgets/controls",
+        "help": "",
+        "name": "_view_module",
+        "type": "string"
+      },
+      {
+        "default": "1.5.0",
+        "help": "",
+        "name": "_view_module_version",
+        "type": "string"
+      },
+      {
+        "default": "DatetimeView",
+        "help": "",
+        "name": "_view_name",
+        "type": "string"
+      },
+      {
+        "default": "",
+        "help": "Description of the control.",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "default": false,
+        "help": "Enable or disable user changes.",
+        "name": "disabled",
+        "type": "bool"
+      },
+      {
+        "default": "reference to new instance",
+        "help": "",
+        "name": "layout",
+        "type": "reference",
+        "widget": "Layout"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "max",
+        "type": "Datetime"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "min",
+        "type": "Datetime"
+      },
+      {
+        "default": "reference to new instance",
+        "help": "Styling customizations",
+        "name": "style",
+        "type": "reference",
+        "widget": "DescriptionStyle"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "Is widget tabbable?",
+        "name": "tabbable",
+        "type": "bool"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "A tooltip caption.",
+        "name": "tooltip",
+        "type": "string"
+      },
+      {
+        "allow_none": true,
+        "default": null,
+        "help": "",
+        "name": "value",
+        "type": "Datetime"
+      }
+    ],
+    "model": {
+      "module": "@jupyter-widgets/controls",
+      "name": "NaiveDatetimeModel",
+      "version": "1.5.0"
+    },
+    "view": {
+      "module": "@jupyter-widgets/controls",
+      "name": "DatetimeView",
+      "version": "1.5.0"
+    }
+  },
+  {
+    "attributes": [
+      {
+        "default": [],
+        "help": "CSS classes applied to widget DOM element",
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4519,9 +4449,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4586,18 +4514,8 @@
         "type": "reference",
         "widget": "Layout"
       },
-      {
-        "default": 100,
-        "help": "Max value",
-        "name": "max",
-        "type": "int"
-      },
-      {
-        "default": 0,
-        "help": "Min value",
-        "name": "min",
-        "type": "int"
-      },
+      { "default": 100, "help": "Max value", "name": "max", "type": "int" },
+      { "default": 0, "help": "Min value", "name": "min", "type": "int" },
       {
         "default": false,
         "help": "Whether the control is currently playing.",
@@ -4616,12 +4534,7 @@
         "name": "show_repeat",
         "type": "bool"
       },
-      {
-        "default": 1,
-        "help": "Increment step",
-        "name": "step",
-        "type": "int"
-      },
+      { "default": 1, "help": "Increment step", "name": "step", "type": "int" },
       {
         "default": "reference to new instance",
         "help": "Styling customizations",
@@ -4643,12 +4556,7 @@
         "name": "tooltip",
         "type": "string"
       },
-      {
-        "default": 0,
-        "help": "Int value",
-        "name": "value",
-        "type": "int"
-      }
+      { "default": 0, "help": "Int value", "name": "value", "type": "int" }
     ],
     "model": {
       "module": "@jupyter-widgets/controls",
@@ -4729,9 +4637,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4756,9 +4662,7 @@
       {
         "default": [],
         "help": "The labels for the options.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_options_labels",
         "type": "array"
       },
@@ -4844,9 +4748,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4871,9 +4773,7 @@
       {
         "default": [],
         "help": "The labels for the options.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_options_labels",
         "type": "array"
       },
@@ -4965,9 +4865,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -4992,9 +4890,7 @@
       {
         "default": [],
         "help": "The labels for the options.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_options_labels",
         "type": "array"
       },
@@ -5031,9 +4927,7 @@
       {
         "default": [],
         "help": "Selected indices",
-        "items": {
-          "type": "int"
-        },
+        "items": { "type": "int" },
         "name": "index",
         "type": "array"
       },
@@ -5088,9 +4982,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -5115,9 +5007,7 @@
       {
         "default": [],
         "help": "The labels for the options.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_options_labels",
         "type": "array"
       },
@@ -5221,9 +5111,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -5248,9 +5136,7 @@
       {
         "default": [],
         "help": "The labels for the options.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_options_labels",
         "type": "array"
       },
@@ -5417,9 +5303,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -5469,10 +5353,7 @@
       {
         "default": [],
         "help": "List of widget children",
-        "items": {
-          "type": "reference",
-          "widget": "Widget"
-        },
+        "items": { "type": "reference", "widget": "Widget" },
         "name": "children",
         "type": "array"
       },
@@ -5530,9 +5411,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -5582,10 +5461,7 @@
       {
         "default": [],
         "help": "List of widget children",
-        "items": {
-          "type": "reference",
-          "widget": "Widget"
-        },
+        "items": { "type": "reference", "widget": "Widget" },
         "name": "children",
         "type": "array"
       },
@@ -5643,9 +5519,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -5760,9 +5634,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -5884,9 +5756,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -5965,13 +5835,8 @@
         "name": "step",
         "type": ["float", "string"],
         "union_attributes": [
-          {
-            "type": "float"
-          },
-          {
-            "enum": ["any"],
-            "type": "string"
-          }
+          { "type": "float" },
+          { "enum": ["any"], "type": "string" }
         ]
       },
       {
@@ -6019,9 +5884,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -6137,9 +6000,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -6164,9 +6025,7 @@
       {
         "default": [],
         "help": "The labels for the options.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_options_labels",
         "type": "array"
       },
@@ -6211,9 +6070,7 @@
       {
         "default": [],
         "help": "Icons names for each button (FontAwesome names without the fa- prefix).",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "icons",
         "type": "array"
       },
@@ -6255,9 +6112,7 @@
       {
         "default": [],
         "help": "Tooltips for each button.",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "tooltips",
         "type": "array"
       }
@@ -6346,9 +6201,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -6398,10 +6251,7 @@
       {
         "default": [],
         "help": "List of widget children",
-        "items": {
-          "type": "reference",
-          "widget": "Widget"
-        },
+        "items": { "type": "reference", "widget": "Widget" },
         "name": "children",
         "type": "array"
       },
@@ -6443,9 +6293,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -6554,9 +6402,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -6676,9 +6522,7 @@
       {
         "default": [],
         "help": "CSS classes applied to widget DOM element",
-        "items": {
-          "type": "string"
-        },
+        "items": { "type": "string" },
         "name": "_dom_classes",
         "type": "array"
       },
@@ -6734,9 +6578,7 @@
       {
         "default": [],
         "help": "The output messages synced from the frontend.",
-        "items": {
-          "type": "object"
-        },
+        "items": { "type": "object" },
         "name": "outputs",
         "type": "array"
       },
