@@ -852,16 +852,16 @@ Attribute        | Type             | Default          | Help
 `source`         | array            | `[]`             | The source (widget, 'trait_name') pair
 `target`         | array            | `[]`             | The target (widget, 'trait_name') pair
 
-### NaiveDatetimeModel (@jupyter-widgets/controls, 1.5.0); DatetimeView (@jupyter-widgets/controls, 1.5.0)
+### NaiveDatetimeModel (@jupyter-widgets/controls, 2.0.0); DatetimeView (@jupyter-widgets/controls, 2.0.0)
 
 Attribute        | Type             | Default          | Help
 -----------------|------------------|------------------|----
 `_dom_classes`   | array of string  | `[]`             | CSS classes applied to widget DOM element
 `_model_module`  | string           | `'@jupyter-widgets/controls'` | 
-`_model_module_version` | string           | `'1.5.0'`        | 
+`_model_module_version` | string           | `'2.0.0'`        | 
 `_model_name`    | string           | `'NaiveDatetimeModel'` | 
 `_view_module`   | string           | `'@jupyter-widgets/controls'` | 
-`_view_module_version` | string           | `'1.5.0'`        | 
+`_view_module_version` | string           | `'2.0.0'`        | 
 `_view_name`     | string           | `'DatetimeView'` | 
 `description`    | string           | `''`             | Description of the control.
 `disabled`       | boolean          | `false`          | Enable or disable user changes.

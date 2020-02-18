@@ -4415,7 +4415,7 @@
         "type": "string"
       },
       {
-        "default": "1.5.0",
+        "default": "2.0.0",
         "help": "",
         "name": "_model_module_version",
         "type": "string"
@@ -4433,7 +4433,7 @@
         "type": "string"
       },
       {
-        "default": "1.5.0",
+        "default": "2.0.0",
         "help": "",
         "name": "_view_module_version",
         "type": "string"
@@ -4509,12 +4509,12 @@
     "model": {
       "module": "@jupyter-widgets/controls",
       "name": "NaiveDatetimeModel",
-      "version": "1.5.0"
+      "version": "2.0.0"
     },
     "view": {
       "module": "@jupyter-widgets/controls",
       "name": "DatetimeView",
-      "version": "1.5.0"
+      "version": "2.0.0"
     }
   },
   {
